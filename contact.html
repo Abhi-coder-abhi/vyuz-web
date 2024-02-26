@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="./css/contact.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+</head>
+
+<body>
+    
+        <div class='contact-page-main-container'>
+            <div class='contact-page-container'>
+                <div class='contact-page-img-container'>
+                    <img src='./images/side_img.png' alt='asdf' />
+                </div>
+                <div class='contact-page-content-container'>
+                    <h1 class='contact-page-heading'><span>Contact</span> Us</h1>
+                    <form id="contactForm">
+                        <input class='contact-page-small-input' type='text' placeholder='Name' required />
+                        <input class='contact-page-small-input' type='email' placeholder='Email' required />
+                        <textarea class='contact-page-description-input' type='text' placeholder='Description'
+                            required></textarea>
+                        <button class='contact-page-submit-btn' type='submit'>Submit</button>
+                    </form>
+                </div>
+
+            </div>
+            <div id="menu-icon-container"></div>
+        
+        </div>
+        <div id="footer" style="overflow: hidden;"></div>
+    
+    <script src="./scripts/menu.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/react@17/umd/react.development.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/react-dom@17/umd/react-dom.development.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/react-social-icons/dist/react-social-icons.js"></script>
+    <script src="./scripts/footer.js" type="module"></script>
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', handleSubmit);
+
+        function handleSubmit(event) {
+            event.preventDefault();
+            console.log("Submitted");
+            // You can add your form submission logic here
+        }
+    </script>
+</body>
+
+</html>

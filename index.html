@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="./favicon.ico" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="theme-color" content="#000000" />
+    <meta name="description"
+      content="VYUG Metaverse Uplifts Innovation And Changes How We Interact With The Internet. Look Beyond Reality, And Experience A Virtual Yug Like Never Before." />
+    <link rel="canonical" href="https://www.vyug.io/" />
+    <meta name="robots" content="follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large" />
+    <link rel="nofollow" type="text/plain" href="./robots.txt" />
+    <!--
+        manifest.json provides metadata used when your web app is installed on a
+        user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+      -->
+    <link rel="manifest" href="./manifest.json" />
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="./sitemap.xml" />
+    <img src="./images/Logo.webp" class="App-logo"
+      alt="best Metaverse platform – Vyug Metaverse">
+    <meta property="og:title" content="VYUG - Where You Belong!" />
+    <meta property="og:site_name" content="VYUG" />     
+    <meta property="og:url" content="https://www.vyug.io/" />
+    <meta property="og:description"
+      content="VYUG Metaverse Uplifts Innovation And Changes How We Interact With The Internet. Look Beyond Reality, And Experience A Virtual Yug Like Never Before." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://www.vyug.io/static/media/Logo.62fde21d504a00588441.webp" />
+  
+    <!-- 7. Twitter Card Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@VYUG" />
+    <meta name="twitter:title" content="VYUG - Where You Belong!" />
+    <meta name="twitter:description"
+      content="VYUG Metaverse Uplifts Innovation And Changes How We Interact With The Internet. Look Beyond Reality, And Experience A Virtual Yug Like Never Before." />
+    <meta name="twitter:image" content="https://www.vyug.io/static/media/Logo.62fde21d504a00588441.webp" />
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9FVZNL1Q8K"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('js', new Date());
+  
+      gtag('config', 'G-9FVZNL1Q8K');
+    </script>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-11421948833"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+       function gtag() { dataLayer.push(arguments); } 
+       gtag('js', new Date());
+       gtag('config', 'AW-11421948833');
+    </script>
+  
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "VYUG",
+      "alternateName": "Virtual Yug",
+      "url": "https://www.vyug.io/",
+      "logo": "https://www.vyug.io/static/media/Logo.62fde21d504a00588441.webp",
+      "sameAs": [
+        "https://www.facebook.com/VyugOfficial/",
+        "https://twitter.com/VyugOfficial",
+        "https://www.instagram.com/vyugofficial/",
+        "https://bit.ly/3Roh83k",
+        "https://www.vyug.io/"
+      ]
+    }
+  </script>
+    <title>VYUG - Where You Belong!</title>
+    <link rel="stylesheet" href="./css/homepage.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+</head>
+
+<body>
+    <div class='App'>
+        <video id="v0" preload="preload" loop></video>
+        <div id="scrollSection"></div>
+        <div class='App-scroll-button'><img src="./images/scroll.svg" alt="Scroll Icon"></div>
+        <div class='App-scroll'>scroll</div>
+    </div>
+    <div id="menu-icon-container"></div>
+    <div id="footer"></div>
+    <script src="./scripts/menu.js"></script>
+    <script src="./scripts/footer.js" type="module"></script>
+    <script src="./scripts/scrambleText.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const video = document.getElementById('v0');
+            const scrollSection = document.getElementById('scrollSection');
+            const scrollButton = document.querySelector('.App-scroll-button img');
+            const scrollText = document.querySelector('.App-scroll');
+            const scrambleText = document.getElementById('scrambleText');
+
+            // Add event listener to handle scrolling
+            function scrollProgress() {
+                const scrollpx = document.documentElement.scrollTop;
+                const winHeightpx = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                const scrollLen = Math.ceil((scrollpx / winHeightpx) * 70);
+                setCurrentImageIndex(scrollLen);
+            }
+
+            window.addEventListener('scroll', scrollProgress);
+
+            // Set up video source based on screen size
+            const isMobile = window.matchMedia("(max-width: 500px)").matches;
+
+            if (isMobile) {
+            const header = document.createElement('header');
+            header.className = 'App-header';
+
+            const img = document.createElement('img');
+            img.src = `../images/${currentImageIndex}.webp`;
+            img.style.height = "100vh";
+            img.style.width = "100vw";
+            img.alt = `${currentImageIndex + 1}`;
+
+            const scrollButton = document.createElement('div');
+            scrollButton.className = 'App-scroll-button';
+            const scrollButtonImg = document.createElement('img');
+            scrollButtonImg.src = './images/scroll.svg';
+            scrollButtonImg.alt = `${currentImageIndex + 1}`;
+            scrollButton.appendChild(scrollButtonImg);
+
+            const scrollText = document.createElement('div');
+            scrollText.className = 'App-scroll';
+            scrollText.textContent = 'scroll';
+
+            header.appendChild(img);
+            header.appendChild(scrollButton);
+            header.appendChild(scrollText);
+
+            document.body.appendChild(header);
+        }
+            const videoSource = isMobile ? "./videos/landingpage.mp4" : "./videos/landingpage.mp4";
+            video.innerHTML = `<source type="video/mp4" src="${videoSource}"></source>`;
+
+            // Set up video height based on its duration
+            video.addEventListener('loadedmetadata', function () {
+                const { duration } = video;
+                const playbackConst = 500;
+                scrollSection.style.height = Math.floor(duration) * playbackConst + "px";
+            });
+
+            // Set up scrolling playback
+            window.requestAnimationFrame(function scrollPlay() {
+                if (video) {
+                    const frameNumber = window.pageYOffset / 500; // Adjust playbackConst as needed
+                    video.currentTime = frameNumber;
+                }
+                window.requestAnimationFrame(scrollPlay);
+            });
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+[
+    {
+      "filePath": "`url(${require('../images/0.webp')})`",
+      "description1": "ENCHANTING FOREST",
+      "description2": "Take a break from the mundane city life and stroll in the enchanting forests of VYUG that will rejuvenate your senses."
+    },
+    {
+      "filePath": "`url(${require('../images/70.webp')})`",
+      "description1": "MAJESTIC MOUNTAINS",
+      "description2": "No matter where you live, with VYUG, experience the thrill of hiking up a mountain and complete your quota of adventure."
+    },
+    {
+      "filePath": "`url(${require('../images/158.webp')})`",
+      "description1": "TRANQUIL DESERTS",
+      "description2": "Spend an evening by the oasis of the vast tranquil desert as you listen to folk songs sitting by the bonfire"
+    },
+    {
+        "filePath": "`url(${require('../images/1.webp')})`",
+        "description1": "GLOBAL EDUCATION",
+        "description2": "VYUG is set to revolutionize online education where students will get to study sitting in a virtual classroom & not from the screen."
+      },
+      {
+        "filePath": "`url(${require('../images/72.webp')})`",
+        "description1": "ENDLESS ENTERTAINMENT",
+        "description2": "Step into a new world of entertainment where you can shop, watch movies, visit concerts & more with the people you love no matter where they are from."
+      },
+      {
+        "filePath": "`url(${require('../images/159.webp')})`",
+        "description1": "eGAME / SPORTS",
+        "description2": "With eGaming being an integral part of any Metaverse, at VYUG, we are going far & beyond with the option to play real-life games like basketball, cricket, soccer & more."
+      },
+      {
+        "filePath": "`url(${require('../images/159.webp')})`",
+        "description1": "ENTHRALLING TOURISM",
+        "description2": "With VYUG tourism, the world is your playground that allows you to visit and enjoy the sights & sounds of the famous tourist locations from around the world."
+      },
+      {
+        "filePath": "`url(${require('../images/159.webp')})`",
+        "description1": "CONNECTED CORPORATE",
+        "description2": "VYUG Metaverse is set to disrupt the corporate space by bringing a new vision of corporate structure where you can work from the office while staying at home."
+      }
+      
+  ]
+  

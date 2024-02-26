@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
+    <link rel="stylesheet" href="./css/about.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <style>
+        /* Your additional styles here */
+    </style>
+</head>
+<body>
+      <div style="overflow: hidden;">
+        <img src="./images/sequence/0.webp" style="height: 100vh; width: 100vw; position: fixed;" alt="0" />
+
+        <div class="about-page-header-container">
+            <div class="about-page-header">THE VIRTUAL</div>
+            <div class="about-page-header1">REALM</div>
+        </div>
+
+        <div style="background-color: white; height: 100vh; width: 100vw;"></div>
+
+        <div class="about-page-container1">
+            <div class="about-page-container1-box">
+                <div class="about-page-container1-label">VYUG</div>
+                <div class="about-page-container1-text">
+                    <span class="about-text1">VYUG METAVERSE</span>
+                    <span class="about-text2">Welcome to VYUG, where innovation and imagination converge to shape a transformative digital realm. At VYUG, we invite you to experience a metaverse like no other—a space where reality seamlessly intertwines with the virtual, offering endless possibilities for connection, growth, and immersive engagement. Our commitment to lifelike realism, cutting-edge technology, and a diverse range of experiences makes VYUG a place where you truly belong. Join us on this exciting journey as we redefine the boundaries of virtual interaction, education, entertainment, and more. Welcome to VYUG—your gateway to a world where the extraordinary becomes reality.</span>
+                </div>
+            </div>
+            <video src="./videos/T-shirt.mp4" autoplay loop muted playsinline class="about-page-container1-card"></video>
+        </div>
+
+        <form class="about-page-container2">
+            <div class="about-page-image-overlay1"></div>
+            <div class="about-page-container2-text">"WHERE YOU BELONG"</div>
+        </form>
+
+        <div style="height: 100vh; width: 100vw; position: relative;">
+            <div class="about-page-image-container">
+                <div class="about-page-image" id="aboutImage"></div>
+                <div class="about-page-image-overlay" id="cursor-circle"></div>
+            </div>
+
+            <div class="about-page-container3" >
+                <div class="about-page-container3-box">
+                    <div class="about-page-container3-label">Description 1</div>
+                    <div class="about-page-container3-text">
+                        <span>Description 2</span>
+                    </div>
+                </div>
+                <div class="about-page-container3-card-box" >
+                    <div class="about-page-container3-card-container" id="slider">
+                        <form class="about-page-container3-card1" name="0" ></form>
+                        <form class="about-page-container3-card2" name="1" ></form>
+                        <form class="about-page-container3-card3" name="2"></form>
+                        <form class="about-page-container3-card4" name="3"></form>
+                        <form class="about-page-container3-card5" name="4"></form>
+                        <form class="about-page-container3-card6" name="5"></form>
+                        <form class="about-page-container3-card7" name="6"></form>
+                        <form class="about-page-container3-card8" name="7"></form>
+                    </div>
+                    <div>
+                        <div>
+                            <img src="./images/line-angle-left-icon 1.svg" onclick="prevSlide()" alt="" class="about-page-slide-button1">
+                            <img src="./images/Vector.svg" onclick="nextSlide()" alt="" class="about-page-slide-button">
+                        </div>
+                        <div>
+                            <img src="./images/Rectangle 10.svg" class="about-page-slider">
+                            <img src="./images/Rectangle 11.svg"  class="about-page-slider1">
+                        </div>
+                        <div class="about-page-index" id="aboutPageIndex"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="menu-icon-container"></div>
+    <div id="footer" style="overflow: hidden;"></div>
+
+    <script src="./scripts/menu.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script src="./scripts/footer.js" type="module"></script>
+    <script>
+          var index = 0; // Initialize index
+
+$(document).ready(function(){
+    $('#slider').slick({
+        dots: true,
+        infinite: true,
+        slidesToShow: 3,
+        slidesToScroll: 1
+    });
+    $('#slider').on('afterChange', function(event, slick, currentSlide){
+        index = currentSlide;
+        updateBackgroundImage(); // Call to update the background image
+        fetchDescriptions(currentSlide);
+
+    });
+    fetchDescriptions(0)
+    updateIndex(); 
+    updateSliderWidth()
+});
+
+function prevSlide() {
+    $('#slider').slick('slickPrev');
+    updateIndex();
+    updateBackgroundImage(); // Call to update the background image
+}
+
+function nextSlide() {
+    $('#slider').slick('slickNext');
+    updateIndex();
+    updateBackgroundImage(); // Call to update the background image
+}
+
+function updateIndex() {
+    var currentSlide = $('#slider').slick('slickCurrentSlide');
+    index = currentSlide;
+    var formattedIndex = (index + 1 < 10) ? '0' + (index + 1) : (index + 1);
+    console.log(formattedIndex)
+    // Update the text content of the about-page-index div
+    document.getElementById('aboutPageIndex').textContent = formattedIndex;
+}
+
+// Update background image based on the index
+function updateBackgroundImage() {
+    console.log(index)
+    var backgroundImageURL = '../images/regions/' + (parseInt(index) + 1) + '.webp';
+    var aboutPageImage = document.getElementById('aboutImage');
+    aboutPageImage.style.backgroundImage = 'url(' + backgroundImageURL + ')';
+}
+updateBackgroundImage();
+function toggleMenu() {
+    var menuImage = document.getElementById('menuImage');
+    var ring = document.querySelector('.ring');
+
+    // Toggle the menu icon
+    if (menuImage.src.includes('./images/menu_0.svg')) {
+        menuImage.src = './images/menu_1.svg';
+    } else {
+        menuImage.src = './images/menu_0.png';
+    }
+
+    // Toggle the ring animation
+    ring.classList.toggle('active');
+}
+function updateSliderWidth() {
+    var sliderWidth = (index + 1) * 3.37 + 'vw'; // Calculate width based on index
+    $('.about-page-slider1').css('width', sliderWidth); // Set width dynamically
+}
+function fetchDescriptions(index) {
+    $.ajax({
+        url: './scripts/region-description.json', // Path to your JSON file
+        dataType: 'json',
+        success: function(data) {
+            // Access the description based on the index
+            var descriptionOne = data[index].description1;
+            var descriptionTwo = data[index].description2;
+            // Update the HTML elements with the descriptions
+            $('.about-page-container3-label').text(descriptionOne);
+            $('.about-page-container3-text span').text(descriptionTwo);
+            
+            // Update the index and slider width after successful fetch
+            updateIndex(); 
+            updateSliderWidth();
+        },
+        error: function(xhr, status, error) {
+            console.error('Error fetching descriptions:', error);
+        }
+    });
+}
+    </script>
+</body>
+</html>
